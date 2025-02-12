@@ -15,6 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.reply.R
 import com.example.reply.data.Email
+import androidx.compose.foundation.shape.CircleShape
 
 @Composable
 fun ReplySearchBar(modifier: Modifier = Modifier) {
@@ -22,7 +23,10 @@ fun ReplySearchBar(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxWidth()
             .padding(16.dp)
-            .background(MaterialTheme.colorScheme.background),
+            .background(
+                MaterialTheme.colorScheme.background,
+                CircleShape
+            ),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(

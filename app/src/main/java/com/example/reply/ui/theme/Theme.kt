@@ -107,6 +107,22 @@ fun AppTheme(
     MaterialTheme(
         colorScheme = colors,
         typography = typography,
-        content = content
+        shapes = shapes,
+        content = {
+            content()
+
+            // Card tidak membutuhkan onClick, jadi aman untuk dibiarkan seperti ini
+            Card(shape = MaterialTheme.shapes.medium) {
+                Text("Card Content")
+            }
+
+            // FloatingActionButton membutuhkan onClick, jadi kita tambahkan parameter ini
+            FloatingActionButton(
+                onClick = { /* TODO: Tambahkan logika klik */ },
+                shape = MaterialTheme.shapes.large
+            ) {
+                Text("+") // Ganti dengan ikon atau teks lain
+            }
+        }
     )
 }
